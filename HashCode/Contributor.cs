@@ -8,10 +8,7 @@ namespace HashCode
         public HashSet<Skill> Skills { get; set; } = new HashSet<Skill>();
 
 
-        public bool IsAssignable(Project project)
-        {
-            
-        }
+       
         
     }
 }
