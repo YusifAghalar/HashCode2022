@@ -19,11 +19,22 @@ namespace HashCode
 
         public void Solve()
         {
-            var project = Projects.OrderBy(x => x.FinishTime)
+            var projects = Projects.OrderBy(x => x.FinishTime)
                 .ThenBy(x => x.Roles.Count);
-            for (int i = 0; i < 1000000; i++)
+
+            foreach (var project in projects)
             {
-                var availableContributors=Contributors.Where(x=>x.)
+                var projectRoles = project.Roles;
+                var availableContributors = Contributors.OrderBy(x => x.Skills.Count);
+                availableContributors.Where(x => x.IsAssingnable(project));
+                var contributor = availableContributors.FirstOrDefault();
+                if(contributor==null) continue;
+                
+                
+
+            }
+                
+
             }
 
         }
