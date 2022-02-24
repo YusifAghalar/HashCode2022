@@ -48,6 +48,21 @@ namespace HashCode
             {
                 var lineData = fileTextLines[lineIndex++].Split(" ");
 
+                var newProject = new Project
+                {
+                    Name = lineData[0],
+                    Duration = int.Parse(lineData[1]),
+                    Score = int.Parse(lineData[2]),
+                    FinishTime = int.Parse(lineData[3])
+                };
+
+                var roleCount = int.Parse(lineData[4]);
+                for (int j = 0; j < roleCount; j++)
+                {
+                    var roleLineData = fileTextLines[lineIndex++].Split(" ");
+                    newProject.Roles.Add(new Role { Skill = new Skill { Name = roleLineData[0], Level = int.Parse(roleLineData[1]) } });
+                }
+                mainProgramData.Projects.Add(newProject);
             }
 
             return mainProgramData;
