@@ -4,6 +4,7 @@ using HashCode;
 using System;
 
 var fileReader = new FileReader();
-fileReader.ReadFile();
+var data = fileReader.ReadFile();
+var problem = new MainProgramData(data.Contributors,data.Projects);
 
 Console.WriteLine("Hello, World!");
