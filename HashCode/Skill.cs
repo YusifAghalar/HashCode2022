@@ -1,6 +1,6 @@
 namespace HashCode
 {
-    public struct Skill
+    public class Skill
     {
         public string Name { get; set; }
         public int Level { get; set; }
